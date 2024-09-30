@@ -23,7 +23,7 @@ This project provides a Flask-based API for license plate recognition using comp
 
 1. Clone the repository:
    ```
-   git clone https://github.com/vjkrishna21/license-plate-recognition-python.git
+   git clone https://github.com/techbyvj/license-plate-recognition-python.git
    cd license-plate-recognition-api
    ```
 
