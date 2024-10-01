@@ -90,7 +90,13 @@ The image processing pipeline includes the following steps:
 4. Find and analyze contours to detect the license plate
 5. Use OCR (Tesseract and EasyOCR) to recognize text on the license plate
 
-For more details, see the `utils.py` and `image_utils.py` files.
+## For More Details
+
+For more detailed information about the implementation, usage, and additional features, please visit the project's GitHub repository:
+
+[https://github.com/techbyvj/PlateRecognizePy](https://github.com/techbyvj/PlateRecognizePy)
+
+This repository contains the full source code, documentation, and examples to help you get started with the License Plate Recognition API.
 
 ## Contributing
 
