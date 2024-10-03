@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify
 import cv2
 import numpy as np
 import logging
-from utils import process_license_plate
 from dotenv import load_dotenv
 import os
 from constants import ErrorCode, Constants
+from plate_recognize_py import process_license_plate
 
 # Load environment variables
 load_dotenv()
@@ -38,7 +38,11 @@ def read_image_file(file):
     return cv2.imdecode(np.frombuffer(file.read(), np.uint8), cv2.IMREAD_COLOR)
 
 def process_license_plate_image(image):
-    license_plate, text = process_license_plate(image)
+    config = {
+        'save_output': True,
+        'output_dir': 'output'
+    }
+    license_plate, text = process_license_plate(image, config)
     if license_plate is None or text is None:
         logger.warning("No license plate detected or text recognized")
         raise LicensePlateError(Constants.ErrorMessage.NO_PLATE_DETECTED, ErrorCode.NO_PLATE_DETECTED)
